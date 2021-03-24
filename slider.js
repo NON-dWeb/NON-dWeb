@@ -12,7 +12,7 @@ function createSlider(name) {
     sliders[name] = currentSlider;
 
     currentSlider.name = name;
-    currentSlider.items = document.querySelectorAll(name + ' .slider img');
+    currentSlider.items = document.querySelectorAll(name + ' .slider');
     currentSlider.nbSlide = currentSlider.items.length;
     currentSlider.suivant = document.querySelector(name + ' .right');
     currentSlider.precedent = document.querySelector(name + ' .left');
@@ -21,6 +21,9 @@ function createSlider(name) {
     // ajoute les évènements sur le clic
     currentSlider.suivant.addEventListener('click', function (e) { slideSuivante(name); });
     currentSlider.precedent.addEventListener('click', function (e) { slidePrecedente(name); });
+
+    // Défilement automatique
+    currentSlider.interval = setInterval(function() { slideSuivante(name); }, 3000);
 }
 
 function slideSuivante(name) {
@@ -85,5 +88,3 @@ createSlider('#slider2');
 createSlider('#slider3');
 createSlider('#slider4');
 createSlider('#slider5');
-
-

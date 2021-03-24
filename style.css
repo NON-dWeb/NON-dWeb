@@ -255,7 +255,7 @@ to {
 }
 
 #Skill-PHP {
-    animation: Animate-PHP 4s;
+    animation: Animate-PHP 4s;</section>
     -webkit-animation: Animate-PHP 4s;
     -moz-animation: Animate-PHP 4s;
     -o-animation: Animate-PHP 4s;
@@ -459,12 +459,17 @@ p {font-size: 162%;}
     padding: 50px;
   }
   
-  .slider img {
-    max-width: 100%;
-    display: none;
+  .slider {
+      display: none;
+      height: 50vh;
   }
-  img.active {
-    display: block;
+  .slider img {
+    max-height: 100%;
+  }
+  .slider.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     animation: fade 0.8s;
   }
   @keyframes fade {
@@ -495,3 +500,13 @@ p {font-size: 162%;}
 footer {
     background-color: green
 }
+
+/*défilement slider */
+section {
+    border: 1px solid lightgray;
+    padding: 1rem;
+    display: flex;
+    overflow-x: scroll;
+    scroll-padding: 0 50%;
+    scroll-snap-type: x mandatory;
+  }
