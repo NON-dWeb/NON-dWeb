@@ -88,3 +88,5 @@ createSlider('#slider2');
 createSlider('#slider3');
 createSlider('#slider4');
 createSlider('#slider5');
+
+
