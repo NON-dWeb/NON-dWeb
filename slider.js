@@ -5,6 +5,9 @@ sliders = {};
 
 // Creation d'un nouveau slider
 function createSlider(name) {
+
+    if (!document.querySelector(name)) return console.warn('Element '+name+' non trouvé');
+
     // creation d'un objet slider
     currentSlider = {};
 
@@ -23,7 +26,7 @@ function createSlider(name) {
     currentSlider.precedent.addEventListener('click', function (e) { slidePrecedente(name); });
 
     // Défilement automatique
-    currentSlider.interval = setInterval(function() { slideSuivante(name); }, 3000);
+    currentSlider.interval = setInterval(function () { slideSuivante(name); }, 3000);
 }
 
 function slideSuivante(name) {
@@ -67,7 +70,7 @@ function keyPress(e) {
 
     if (e.keyCode === 37) {
         // récupère la liste des clés de l'objet
-        keys = Object.keys(sliders);        
+        keys = Object.keys(sliders);
         // pour chaque clé contenu dans le tableau (id du slider)
         for (i = 0; i < Object.keys(sliders).length; i++) {
             sliders[keys[i]].precedent.click();

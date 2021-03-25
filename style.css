@@ -1,3 +1,9 @@
+/* Général */
+
+section {
+    text-align: center;
+}
+
 /* Nav barre sur tout le site */
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
@@ -39,6 +45,38 @@ nav ul li a:hover {
   background: black;
   color: white;
 }
+
+
+
+/* scroll snap */
+
+/*  html ne doit pas avoir de scroll
+    le body fait 100% de la hauteur de la zone d'affichage (viewport) et scroll verticalement
+*/
+
+html {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*  body doit avoir le scroll-snap-type car il est parent des sections et du header
+    le body fait 100% de la hauteur de la zone d'affichage (viewport) et scroll verticalement
+*/
+
+body {
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+/* Section et header */
+
+/* Les éléments enfant de body avec cette classe vont servir de zone de snap */
+
+.snap-start {
+    scroll-snap-align: start;
+}
+
 
 /* Barre de chargement des compétences */
 
@@ -255,7 +293,7 @@ to {
 }
 
 #Skill-PHP {
-    animation: Animate-PHP 4s;</section>
+    animation: Animate-PHP 4s;
     -webkit-animation: Animate-PHP 4s;
     -moz-animation: Animate-PHP 4s;
     -o-animation: Animate-PHP 4s;
@@ -427,7 +465,10 @@ to {
     margin-top: 28%;
 }
  /* Emplacement du bas de page */
-footer {margin-top: 28%;}
+footer {
+    margin-top: 28%;
+    text-align: center;
+}
 
 /* Taille des paragraphes */
 p {font-size: 162%;}

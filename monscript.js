@@ -9,7 +9,7 @@ if(h1) {
 
 /* page défilement */
 
-const gra = function(min, max) {
+/* const gra = function(min, max) {
   return Math.random() * (max - min) + min;
 }
 const init = function(){
@@ -19,4 +19,4 @@ for (let i = 0; i < items.length; i++){
 }
 cssScrollSnapPolyfill()
 }
-init();
+init(); */
