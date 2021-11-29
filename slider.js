@@ -85,11 +85,4 @@ function keyPress(e) {
 document.addEventListener('keydown', keyPress);
 
 
-createSlider('#slider0');
-createSlider('#slider1');
-createSlider('#slider2');
-createSlider('#slider3');
-createSlider('#slider4');
-createSlider('#slider5');
-
 
